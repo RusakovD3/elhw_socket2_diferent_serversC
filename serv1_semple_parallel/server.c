@@ -41,6 +41,7 @@ int main() {
     serv_addr.sin_addr.s_addr = INADDR_ANY;    // Принимаем подключения на все адреса сервера
     serv_addr.sin_port = htons(8888);          // Порт сервера (8888)
 
+    // bind - привязывает сокет к адресу, который содержится в структуре serv_addr
     if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
         perror("ERROR on binding");
         exit(1);
